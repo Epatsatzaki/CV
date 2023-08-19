@@ -2,13 +2,18 @@
 <h2>CV template</h2>
 
 Pure HTML+CSS+JS curriculum vitæ template, to be printed to PDF from browsers.
+
+<img src=".repo/screenshot.jpg" height="512">
+
 </div>
 
-<br/>
+---
+
+<br>
 
 [toc]
 
-<br/>
+<br>
 
 
 ## Motivation
