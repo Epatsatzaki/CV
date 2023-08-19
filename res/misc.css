@@ -1,0 +1,74 @@
+/* DEFAULTS */
+:root {
+    /* Chrome does not support automatic hypenation,
+       must insert "&shy;" where desired. */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    
+    tab-size: 4;
+    
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+[cust-hypen] {
+    -webkit-hyphens: manual;
+    -moz-hyphens: manual;
+    -ms-hyphens: manual;
+    hyphens: manual;
+}
+
+
+right { display: block; float: right; }
+left  { display: block; float: left;  }
+smash { display: inline-block; width: 0; }
+
+quot::before { content: "“"; }
+quot::after { content: "”"; }
+
+cit::before { content: "«"; }
+cit::after { content: "»"; }
+
+[spaced]>li {
+    margin-top: .7em;
+}
+
+
+/* DEBUG */
+[debug1] { background-color: pink; }
+[debug2] { background-color: lightblue; }
+[debug3] { background-color: hsla(100,85%,60%,.5); }
+
+/* bordino interattivo
+    *[contenteditable="true"]
+    hsla(200,100%,50%,0.7);
+*:hover {  
+    outline: 2pt dotted var(--accent);  
+} */
+
+
+[fade] {
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-name: fadeout;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeout {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+        visibility: hidden;
+    }
+}

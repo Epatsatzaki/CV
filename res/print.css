@@ -1,0 +1,134 @@
+/* DEFAULTS */
+:root {
+    /* main size */
+    --page-width: 21cm;
+    --page-height: calc(var(--page-width) * 1.414213562373095);
+    --page-min: min(var(--page-width), var(--page-height));
+    --page-max: max(var(--page-width), var(--page-height));
+    --page-diff: calc((var(--page-max) - var(--page-min))*.5);
+    --page-bg: white;
+    zoom: 50%;
+}
+
+
+/* hide scrollbars */
+:root {
+    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+  */
+}
+::-webkit-scrollbar {
+    /* Chrome/Safari/Webkit */
+    width: 0px;
+    height: 0px;
+    background: transparent;
+}
+
+
+/* ELEMENTI NASCOSTI */
+[noprint] {
+    position: fixed;
+    left: 1em;
+    top: 1em;
+    z-index: 10;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 .2rem black;
+    /* -webkit-text-stroke: 0.2rem black; */
+    /* paint-order: stroke fill; */
+}
+
+
+/* ELEMENTI */
+body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 0;
+    padding: 2rem;
+    /* width: fit-content;
+    height: fit-content; */
+    /* justify-content: center; */
+    scrollbar-width: 0;
+    box-sizing: initial;
+    counter-reset: page-num;
+}
+
+
+/* PAGINE */
+page {
+    flex-shrink: 0;
+    display: block;
+    width: var(--page-width);
+    height: var(--page-height);
+    box-shadow: 0 0 2rem -.4rem #B2B2B2;
+    /* border: 1px solid #B2B2B2; */
+    position: relative;
+    overflow: hidden;
+    border-radius: 1ex;
+    background-color: var(--page-bg);
+}
+
+/* NUMERO DI PAGINA */
+page::before {
+    counter-increment: page-num;
+    content: counter(page-num);
+    
+    --size: 1.5rem;
+    display: block;
+    width: calc(var(--size));
+    line-height: var(--size);
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    border-radius: 1ex 0 0 0;
+    
+    /* background-color: var(--page-bg); */
+    /* -webkit-text-stroke: 0.16rem black; */
+    /* paint-order: stroke fill; */
+    font-weight: bold;
+    background-color: #0004;
+    color: white;
+}
+
+
+/* STAMPA */
+@page {
+    /*
+    - Firefox consider this as a viewport size (not actual page size)
+    - Chrome does not support variables: var(--page-size)
+    - pdftoppm default resolution is 150, use 96
+    */
+    /* size: 1080px 1350px !important; */
+    size: A4 !important;
+    /* size: landscape; */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+@media print {
+    :root, html, body {
+        width: var(--page-width) !important;
+        height: var(--page-height) !important;
+        display: block;
+        padding: 0 !important;
+        margin: 0 !important;
+        zoom: unset !important;
+    }
+    [noprint] {
+        display: none;
+    }
+    page {
+        break-inside: avoid;
+        break-after: page;
+        page-break-after: always;
+        box-shadow: unset;
+        border-radius: unset;
+    }
+    page::before, page::after {
+        display: none;
+    }
+}
