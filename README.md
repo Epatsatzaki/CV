@@ -124,20 +124,25 @@ Pure HTML+CSS+JS curriculum vitæ template, to be printed to PDF from browsers.
 - use `lang` attribute to set proper text spacing, hyphenation and word breaking
 - avoid negative `z-index`es
 - use `em` `ex` `rem` size measures
+- check **your browser** settings for minimum font, it **will** interfere with very little text
 
 
-## CV notes (nonexhaustive)
+## CV notes (nonexhaustive, extreme synthesis)
 
 - perfect CVs do not exists
 - lot of recruiters don't know what they're talking about
-- companies use Applicant Tracking Systems (ATS; **software**) to skim resumes, so avoid graphs and progress bars (unless _maybe_ textual ones, using unicode symbols)
+- you can suppose _but can't know in advance_ how many applications a certain company receives — better to improve the probability of success
+- some companies use Applicant Tracking Systems (ATS; **software**) to skim resumes, so avoid graphs and progress bars (unless _maybe_ textual ones, using unicode symbols)
 - style
-    - avoid europass
+    - avoid europass (valid but soulless)
     - make links clickable but also don't hide the urls (for supporting printing on paper)
     - avoid too much color
 - content
     - the entire cv should be read in max 20 seconds
     - aim for 1 page only, but that's not an hard limit
+    - communicate your strong interest for the specific job — regarding the application...
+        - strip unuseful entries
+        - add projects, certificates and seminars
     - put yourself in the shoes of the reader
     - transmit yourself without exaggerating
         - insert hobbies

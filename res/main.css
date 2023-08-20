@@ -2,6 +2,7 @@
 :root {
     font-family: 'Titillium';
     font-size: 11pt;  /* paragraph size */
+    /* WARNING: check your browser minimal font size! */
     color: #272727e0;
     /*
         #517fa4a8
