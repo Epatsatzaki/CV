@@ -1,13 +1,18 @@
 /* DEFAULTS */
-:root {
+/* :root {
     /* main size */
-    --page-width: 21cm;
+    /* --page-width: 21cm;
     --page-height: calc(var(--page-width) * 1.414213562373095);
     --page-min: min(var(--page-width), var(--page-height));
     --page-max: max(var(--page-width), var(--page-height));
     --page-diff: calc((var(--page-max) - var(--page-min))*.5);
     --page-bg: white;
-    zoom: 50%;
+    zoom: 80%;
+} */ */
+:root {
+    --page-width: min(100vw, 100vh / 1.414); /* Maintain A4 ratio */
+    --page-height: calc(var(--page-width) * 1.414);
+    --page-bg: white;
 }
 
 
@@ -41,7 +46,7 @@
 
 
 /* ELEMENTI */
-body {
+/* body {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -50,24 +55,44 @@ body {
     /* width: fit-content;
     height: fit-content; */
     /* justify-content: center; */
-    scrollbar-width: 0;
+    /* scrollbar-width: 0;
     box-sizing: initial;
     counter-reset: page-num;
+} */ */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #f5f5f5; /* Optional: light gray background */
 }
 
 
 /* PAGINE */
-page {
+/* page {
     flex-shrink: 0;
     display: block;
     width: var(--page-width);
     height: var(--page-height);
     box-shadow: 0 0 2rem -.4rem #B2B2B2;
     /* border: 1px solid #B2B2B2; */
-    position: relative;
+    /* position: relative;
     overflow: hidden;
     border-radius: 1ex;
     background-color: var(--page-bg);
+} */ */
+page {
+    width: var(--page-width);
+    height: var(--page-height);
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--page-bg);
+    box-shadow: 0 0 2rem -.4rem #B2B2B2;
 }
 
 /* NUMERO DI PAGINA */

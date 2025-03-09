@@ -136,7 +136,7 @@ ver { font-size: .9em; }
 
     color: white;
     overflow: hidden;
-    flex: 0 0 var(--page-split);
+    flex: 0 0 30%;
     /* border-radius: 0 0 1rem 1rem; */
     padding: var(--page-ub) var(--page-gap) var(--page-ub) var(--page-lr);
 }
@@ -227,7 +227,7 @@ ver { font-size: .9em; }
 .text>:first-child {
     font-size: 1.3rem;
     font-weight: bold;
-    margin: var(--page-elgap) 0 1.6ex; 0;
+    margin: var(--page-elgap) 0 1.6ex; 
 }
 
 
@@ -268,7 +268,7 @@ ver { font-size: .9em; }
 }
 .timeline>:not(b):not(:last-child)>:first-child {
     margin-bottom: .6ex;
-}-
+}
 .timeline>:nth-child(3n) {
 /*     line-height: 1; */
     width: fit-content;
